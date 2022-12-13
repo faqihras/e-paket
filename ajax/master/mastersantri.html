@@ -1,0 +1,240 @@
+
+
+<style type="text/css">
+
+div#tData_paginate {
+  margin-bottom: -30px;
+  margin-top: -26px;
+}
+
+div#tData_filter {
+  margin-bottom: -14px;
+  margin-top: -3px;
+}
+.box-form {
+  background-color: white;
+  margin-bottom: -10px;
+}
+
+</style>
+
+<div class="row">
+	<div id="breadcrumb" class="col-md-12">
+		<ol class="breadcrumb">
+			<li><a href="#"><label>MASTER DATA</label></a></li>
+			<li><a href="#"><label>SANTRI</label></a></li>
+		</ol>
+	</div>
+</div>
+
+
+<div class="row">
+	<div  class="col-md-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-user"></i>
+					<span><label>DATA SANTRI</label></span> 
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+
+			<div class="box-form">
+				<div id="forminput" style="margin-bottom:10px;background-color:#FFFFFF"></div>
+			</div>
+			<br>&nbsp;
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="box">
+			<div class="box-form" style="margin-top: 10px;">
+				<center>
+					<button type="button" class="btn btn-primary btn-app-sm" onclick="newdata()"><i class="fa fa-plus"></i></button>
+					<button type="button" class="btn btn-primary btn-app-sm" onclick="save()"><i class="fa fa-save"></i></button>
+					 <button type="button" class="btn btn-primary btn-app-sm" onclick="cetakPdf()"><i class="fa fa-print" aria-hidden="true" style="font-size:30px"></i></button>
+					  <button type="button" class="btn btn-primary btn-app-sm" onclick="tableToExcel('tData', 'Data', 'Datasantri.xls')"><i class="fa fa-file-excel" aria-hidden="true" style="font-size:30px"></i></button>
+					<!-- <button type="button" class="btn btn-default btn-app-sm" onclick="deleteData()"><i class="fa fa-minus"></i></button> -->
+				</center>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="row">
+
+	<div  class="col-md-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-user"></i>
+
+					<span><label>LISTING DATA</label></span>
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+
+			<div class="box-content no-padding table-responsive">
+
+	      <table cellpadding="3" cellspacing="0" border="0" style="width: 72%; margin: 0 auto 2em auto;">
+        <thead>
+            <tr>
+                <th>NIS</th>
+                <th>NAMA</th>
+                <th>ALAMAT</th>
+                <th>ASRAMA</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr id="filter_caridetail">
+            	<div class="form-row">
+
+                &nbsp;<td align="center"><div class="form-group">
+                <input type="text"  class="form-control"  id="cari_norm"></div></td>
+
+                <td align="center"><div class="form-group">
+                <input type="text" class="form-control"  id="cari_nama"></div></td>
+
+                <td align="center"><div class="form-group">
+                <input type="text" class="form-control" id="cari_alamat"></div></td>
+
+                <td align="center"><div class="form-group">
+                <input type="date" class="form-control"  id="cari_tgllahir"></div></td>
+
+                <td align="center"><button class="btn" onclick="cari_detail()"><i class="fa fa-search">&nbsp;CARI</i></button></td>
+
+                <td align="center"><button class="btn" onclick="refresh_detail()"><i class="fa fa-refresh">&nbsp;REFRESH</i></button></td>
+
+            	</div>
+            </tr>
+
+        </tbody>
+    </table>
+				<table class="table table-bordered table-striped table-hover table-heading table-datatable" id="tData">
+ 				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<button type="button" class="btn btn-primary btn-app-sm" data-toggle="modal" data-target="#myModal" id="btpopup" style="display:none"><i class="fa fa-plus"></i></button>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+<div class="modal-dialog" style="width:90%">
+    <div class="modal-content">
+      <div class="modal-header" style="padding: 5px;">
+        <h4 class="modal-title">RIWAYAT PASIEN</h4>
+      </div>
+      <div class="modal-body" style="padding: 5px;">
+		  <div  class="col-md-8">
+				<div class="box-content no-padding table-responsive">
+					<table class="table table-bordered table-striped table-hover table-heading table-datatable" id="tData2"></table>
+				</div>
+		  </div>
+
+	  	  <div  class="col-md-4">
+				<iframe src="laporan/apotek/riwayatmed.php?norm=xxxxxxxx" style="width: 100%;height: 458px;" frameborder="0" id="frameriwayat" name="frameriwayat"></iframe>
+		  </div>
+		  <button type="button" class="btn btn-default btn-app-sm" data-dismiss="modal" id="btmodal" style="display:block;"><i class="fa fa-power-off"></i></button>
+      </div>
+    </div>
+</div>
+</div>
+
+
+<!--  <div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog" style="width:90%">
+		<div class="modal-content">
+			<div class="modal-header" style="padding: 5px;">
+		        <h4 class="modal-title">RIWAYAT PASIEN</h4>
+		    </div>
+
+		    <div class="modal-body" style="padding: 5px;">	      	
+	      		<ul class="nav nav-tabs ">
+				  <li role="presentation" class="active"><a href="#kunjungan" data-toggle="tab">KUNJUNGAN</a></li>
+				  <li role="presentation"><a href="#anamnesa" data-toggle="tab">ANAMNESA</a></li>
+				  <li role="presentation"><a href="#menu2" data-toggle="tab">Messages</a></li>
+				</ul>
+	      	</div>
+
+	      	<div class="tab-content">
+			    <div id="kunjungan" class="container tab-pane active"><br>
+			      <h5><center>RIWAYAT KUNJUNGAN</center></h5>
+			      	<div  class="col-md-12">
+						<div class="box-content no-padding table-responsive">
+							<table class="table table-bordered table-striped table-hover table-heading table-datatable" id="tData2"></table>
+						</div>
+			  		</div>
+			    </div>
+
+			    <div id="anamnesa" class="container tab-pane active"><br>
+			      <h5><center>RIWAYAT ANAMNESA</center></h5>
+			      	<div  class="col-md-12">
+						<div class="box-content no-padding table-responsive">
+							<table class="table table-bordered table-striped table-hover table-heading table-datatable" id="tDataAnamnesa"></table>
+						</div>
+			  		</div>
+			    </div>
+
+			    <div id="menu2" class="container tab-pane fade"><br>
+			      <h3>Menu 2</h3>
+			      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+			    </div>
+  			</div>
+    	</div>		
+	</div>	    
+</div> -->
+
+<script src="js/mastersantri.js"></script>
+<script src="plugins/select2/select2.min.js"></script>
+<script src="plugins/jquery-ui-timepicker-addon/jquery-ui-timepicker-addon.min.js"></script>
+
+<script type="text/javascript">
+
+// Run Datables plugin and create 3 variants of settings
+function AllTables(modul){
+	$('#judul1').html(modul);
+	$('#judul2').html(modul);
+	tableMaster(modul);
+}
+
+
+
+$(document).ready(function() {
+	var modul=document.getElementById('modul').value;
+	LoadDataTablesScripts(AllTables(modul));
+
+	$('.form-control').tooltip();
+	WinMove();
+
+});
+</script>

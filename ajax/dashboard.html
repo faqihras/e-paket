@@ -1,0 +1,350 @@
+<!--Start Breadcrumb-->
+<div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<ol class="breadcrumb">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="#">Dashboard</a></li>
+		</ol>
+	</div>
+</div>
+<!--End Breadcrumb-->
+<!-- <div class="row">
+	<div class="col-sm-3">
+		<div class="box">
+			<div class="box-content">
+			<div class="small-box">
+        <div class="inner">
+            <h3>0</h3>
+            <p>Jumlah Alpha</p>
+        </div>
+            <a href="#" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="box">
+				<div class="box-content">
+				<div class="small-box">
+	        <div class="inner">
+	            <h3>0</h3>
+	            <p>Jumlah Sakit</p>
+	        </div>
+	            <a href="#" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+	        </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="box">
+					<div class="box-content">
+					<div class="small-box">
+		        <div class="inner">
+		            <h3>1</h3>
+		            <p>Jumlah Cuti</p>
+		        </div>
+		            <a href="#" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+		        </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="box">
+						<div class="box-content">
+						<div class="small-box">
+			        <div class="inner">
+			            <h3>4</h3>
+			            <p>Jumlah Perjalanan Dinas</p>
+			        </div>
+			            <a href="#" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+			        </div>
+							</div>
+						</div>
+					</div>
+	</div> -->
+
+<div class="row">
+	<div class="col-xs-6 col-sm-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<!-- <i class="fa fa-bar-chart-o"></i>
+					<span>Statistik Per Bulan</span> -->
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content">
+				<div id="dashboard-header" class="row">
+					<div class="clearfix visible-xs"></div>
+					<div class="col-md-12 col-md-9 pull-right">
+						<div class="row">
+							<div class="col-xs-3">
+								<div class="sparkline-dashboard" id="sparkline-1"></div>
+								<div class="sparkline-dashboard-info">
+									<div id="belanja"></div>
+									<span >PAKET MASUK</span>
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<div class="sparkline-dashboard" id="sparkline-1"></div>
+								<div class="sparkline-dashboard-info">
+									<div id="pendapatan"></div>
+									<span >PAKET BELUM DIAMBIL</span>
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<div class="sparkline-dashboard" id="sparkline-1"></div>
+								<div class="sparkline-dashboard-info">
+									<div id="pegawai"></div>
+									<span >PAKET DISITA</span>
+								</div>
+							</div>
+
+							<!-- <div class="col-xs-2">
+								<div class="sparkline-dashboard" id="sparkline-1"></div>
+								<div class="sparkline-dashboard-info">
+									<div id="pendapatan"></div>
+									<span class="txt-primary">PENDAPATAN</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<div class="sparkline-dashboard" id="sparkline-2"></div>
+								<div class="sparkline-dashboard-info">
+									<div id="rpendapatan"></div>
+									<span class="txt-info">REALISASI</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<div class="sparkline-dashboard" id="sparkline-3"></div>
+								<div class="sparkline-dashboard-info">
+									<div id="spendapatan"></div>
+									<span>SISA</span>
+								</div>
+							</div> -->
+
+						</div>
+					</div>
+				</div>
+				 <!-- <div id="pendapatanChart" style="min-height: 250px;"></div>  -->
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+<div class="row">
+	<div class="col-xs-12 col-sm-6">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-bar-chart-o"></i>
+					<span>Grafik Paket Masuk</span>
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content">
+				 <div id="pendapatanChart" style="min-height: 250px;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-circle"></i>
+					<span>Grafik Paket Per Kategori</span>
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content">
+				<div id="jenisBelanjaPie" style="min-height: 250px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!--Morris Chart-->
+<!--
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-search"></i>
+					<span>Grafik Anggaran Belanja & Realisasi Per SKPD</span>
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content">
+				<div id="morris-chart-1" style="height: 250px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+--->
+<!-- div align="center">
+<iframe height="750" frameborder="0" scrolling="no" width="1000" src="../blud_2019/ajax/rasio.php"></iframe>
+</div> -->
+
+<!-- <div class="row">
+	<div class="col-xs-12 col-sm-6">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-search"></i>
+					<span>Grafik Realisasi Belanja & Pendapatan Per Bulan</span>
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content">
+				<div id="morris-chart-2" style="height: 200px;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-search"></i>
+					<span>Bar charts</span>
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content">
+				<div id="morris-chart-4" style="height: 200px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+ -->
+
+<!--End Dashboard 2 -->
+
+<script src="js/dashboard.js"></script>
+
+
+<script src="plugins/Highcharts-4.1.7/js/highcharts.js"></script>
+<script src="plugins/Highcharts-4.1.7/js/highcharts-3d.js"></script>
+<script src="plugins/Highcharts-4.1.7/js/modules/exporting.js"></script>
+
+<script src="plugins/select2/select2.min.js"></script>
+<script src="plugins/jquery-ui-timepicker-addon/jquery-ui-timepicker-addon.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+function DrawAllMorrisCharts(){
+	rekapDashboard();
+	highchartsPendapatan();
+	highchartPie();
+	// MorrisChart1();
+	// MorrisChart2();
+	// MorrisChart4();
+}
+
+// $(document).ready(function() {
+// 	LoadMorrisScripts(DrawAllMorrisCharts);
+// 	WinMove();
+
+// });
+
+
+
+function DemoGallery(){
+	$('.fancybox').fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+}
+
+$(document).ready(function() {
+
+	// $('.fancybox').fancybox({
+	// 	openEffect	: 'none',
+	// 	closeEffect	: 'none'
+	// });
+
+ //    setGrid();
+	LoadFancyboxScript(DemoGallery);
+
+	LoadMorrisScripts(DrawAllMorrisCharts);
+
+	WinMove();
+
+	LoadDataTablesScripts();	
+	
+});
+
+
+
+</script>

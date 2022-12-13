@@ -1,0 +1,263 @@
+<style type="text/css">
+    div#tData_paginate {
+        margin-bottom: -30px;
+        margin-top: -26px;
+    }
+    div#tData_filter {
+        margin-bottom: -14px;
+        margin-top: -3px;
+    }
+
+    div#tDataList_paginate {
+        margin-bottom: -30px;
+        margin-top: -26px;
+    }
+    div#tDataList_filter {
+        margin-bottom: -14px;
+        margin-top: -3px;
+    }
+
+
+    .box-form {
+        background-color: white;
+        margin-bottom: -10px;
+    }
+    .form-group,
+    .box-content .form-group,
+    .devoops-modal-inner .form-group {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    input.form-control {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .col-md-1,
+    .col-md-2,
+    .col-md-3 {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .table > tbody > tr > td {
+        padding: 4px;
+    }
+    .table > thead > tr > th {
+        padding: 4px;
+    }
+    .col-md-1,
+    .col-md-2,
+    .col-md-3,
+    .col-md-1 {
+        padding: 0px;
+    }
+    .form-group {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    div#s2id_namaBarang {
+        top: -2px;
+    }
+
+
+    .modal-body {
+        padding: 2px;
+    }
+    button#btmodal {
+        margin-right: 30px;
+    }
+    .modal-header {
+        padding: 10px;
+    }
+
+</style>
+
+<div class="row">
+    <div id="breadcrumb" class="col-md-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <label>PEMAKAIAN BARANG</label>
+                </a>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="box" style="margin-bottom:0px;">
+    <div class="box-content" style="padding-top: 0px;padding-bottom:0px;">
+
+        <div  class="col-md-2">
+            <div class="form-group">
+                <label class="control-label">TANGGAL</label>
+                <input type="text" class="form-control" name="tglPemakaian" id="tglPemakaian" placeholder="Pilih Tanggal" autocomplete="off" onchange="cek_stok()"/>
+            </div>
+        </div>
+        <div  class="col-md-3">
+            <div class="form-group">
+                <label class="control-label">UNIT</label>
+                <div class="form-group" id="csunit" style="margin-top:0px">
+                    <!-- <input type="hidden" name="pilihunit" id="pilihunit" > -->
+                </div>
+                <div class="form-group" id="csnmunit">
+                </div>
+
+            </div>
+        </div>
+
+        <div  class="col-md-7">
+            <div class="form-group">
+                <label class="control-label">KETERANGAN</label>
+                <input type="text" class="form-control" name="hketerangan" id="hketerangan"/>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div  class="col-md-3">
+                    <div class="form-group">
+                        <label class="control-label">PEMAKAI</label>
+                        <input type="text" class="form-control" name="pemakai" id="pemakai" placeholder="" />
+                    </div>
+                </div>
+                <div  class="col-md-3">
+                    <div class="form-group">
+                        <label class="control-label">NIP</label>
+                        <input type="text" class="form-control" name="nip" id="nip" placeholder="" />
+                    </div>
+                </div>
+                <div  class="col-md-3">
+                    <div class="form-group">
+                        <label class="control-label">PANGKAT - GOLONGAN</label>
+                        <input type="text" class="form-control" name="pangkat" id="pangkat" placeholder="" />
+                    </div>
+                </div>
+                <div  class="col-md-3">
+                    <div class="form-group">
+                        <label class="control-label">JABATAN</label>
+                        <input type="text" class="form-control" name="jabatan" id="jabatan" placeholder="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p> &nbsp; </p>
+    </div>
+</div>
+<div  class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+</div>
+<div class="row">
+</div>
+
+<div  class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+    <div class="box" style="margin-bottom:0px;">
+        <div class="box-content" style="padding-top: 0px;padding-bottom:0px;">
+
+            <div class="row form-group" style="padding-top: 0px;padding-bottom:0px;margin-top: 0px;margin-bottom:0px;">
+                <div  class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">KODE BARANG</label>
+                        <input type="text" class="form-control" name="kodeBarang" id="kodeBarang" />
+                    </div>
+                </div>
+                <div  class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">NAMA BARANG</label>
+                        <!-- <input type="text" class="form-control" name="namaBarang" id="namaBarang" /> -->
+                        <input type="hidden" class="populate placeholder" name="namaBarang" id="namaBarang" >
+                        <input type="hidden" name="namaBarang_hidden" id="namaBarang_hidden" >
+                    </div>
+                </div>
+                <div  class="col-md-1">
+                    <div class="form-group">
+                        <label class="control-label">SATUAN</label>
+                        <input type="text" class="form-control" name="satuan" id="satuan" />
+                    </div>
+                </div>
+                <div  class="col-md-1">
+                    <div class="form-group">
+                        <label class="control-label">STOK</label>&nbsp;&nbsp;<i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="Silahkan Diklik" onclick="alert('Stok akan berubah-ubah sesuai dengan tanggal penerimaan. Jika anda mendapati stok 0 saat ingin memakai barang kemungkinan tanggal pemakaian lebih muda daripada tanggal penerimaan silahkan dirubah sesuai tanggal penerimaan anda');"></i>
+                        <input type="text" class="form-control" name="stok" id="stok" style="text-align: right;" />
+                    </div>
+                </div>
+                <div  class="col-md-1">
+                    <div class="form-group">
+                        <label class="control-label">QTY *</label>
+                        <!-- <input type="text" class="form-control" name="qty" id="qty" style="text-align: right;" onkeyup="cekInput(this.value)"/> -->
+                        <input type="text" class="form-control" name="qty" id="qty" style="text-align: right;"/>
+                    </div>
+                </div>
+                    <div  class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">DIBERIKAN KEPADA</label>
+                            <input type="text" class="form-control" name="keterangan" id="keterangan" />
+                        </div>
+                    </div>
+
+                <div  class="col-md-1">
+                    <div class="form-group">
+                        <label class="control-label">&nbsp;</label>
+                        <button type="button" class="btn btn-success btn-sm btn-block" onclick="addList()">TAMBAH</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div  class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+        <div class="box" style="margin-bottom:0px;">
+            <div class="box-content" style="padding-top: 5px;padding-bottom:5px;">
+                <div class="box-form" style="margin-bottom:10px;">
+                    <div class="box-content no-padding table-responsive">
+                        <table class="table table-bordered table-striped table-hover table-heading table-datatable" id="tData">
+                        </table>
+                        <input type="hidden" id="idxdet">
+                    </div>
+                    <div  class="col-md-12">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary btn-block" id="cfull" data-toggle="modal" data-target="#myModal" onclick="listing()" >LIST PEMAKAIAN</button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-md-offset-8">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary btn-block" onclick="simpan()">SIMPAN TRANSAKSI</button>
+                                <input type="hidden" id='isProcessing' value="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p> &nbsp; </p>
+        </div>
+    </div>
+    
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width:80%">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">LIST DATA PEMAKAIAN</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="box-content no-padding table-responsive">
+                        <table class="table table-bordered table-striped table-hover table-heading table-datatable" id="tDataList">
+                        </table>
+                    </div>
+                    <div style="text-align:right">
+                        <button type="button" class="btn btn-default btn-app-sm" data-dismiss="modal" id="btmodal" ><i class="fa fa-power-off"></i></button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="plugins/select2/select2.min.js"></script>
+<script src="plugins/jquery-ui-timepicker-addon/jquery-ui-timepicker-addon.min.js"></script>
+<script src="js/pemakaianbarang.js"></script>
